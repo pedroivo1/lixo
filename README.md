@@ -495,3 +495,170 @@
 ✅ **Argumento válido**
 </details>
 </details>
+
+## Capítulo 13:
+
+<details>
+<summary>1. Demonstrações Condicionais (DC)</summary>
+
+<details>
+<summary>Argumento (a)</summary>
+
+**Premissas:**
+1. `∼r ∨ ∼s`
+2. `q → s`
+
+**Conclusão:** `r → ∼q`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `∼r ∨ ∼s`        |    | (P1)           |
+|2| `q → s`          |    | (P2)           |
+|3| `r`              |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|4| `∼s`             |1,3 | (SD)           |
+|5| `∼q`             |2,4 | (MT)           |
+|6| `r → ∼q`         |3-5 | (DC)           |
+
+✅ **Argumento válido**
+</details>
+
+<details>
+<summary>Argumento (b) - Correção DM</summary>
+
+**Premissas:**
+1. `p → ∼q`
+2. `∼(r ∧ ∼p)`
+
+**Conclusão:** `q → ∼r`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `p → ∼q`         |    | (P1)           |
+|2| `∼(r ∧ ∼p)`      |    | (P2)           |
+|3| `q`              |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|4| `∼r ∨ ∼∼p`       | 2  | (DM)           |
+|5| `∼r ∨ p`         | 4  | (DN)           |
+|6| `∼∼q`            | 3  | (DN)           |
+|7| `∼p`             |1,6 | (MT)           |
+|8| `∼r`             |5,7 | (SD)           |
+|9| `q → ∼r`         |3-8 | (DC)           |
+
+✅ **Argumento válido**
+</details>
+
+<details>
+<summary>Argumento (c)</summary>
+
+**Premissas:**
+1. `r → t`
+2. `t → ∼s`
+3. `(r → ∼s) → q`
+
+**Conclusão:** `p → (p ∧ q)`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `r → t`          |    | (P1)           |
+|2| `t → ∼s`         |    | (P2)           |
+|3| `(r → ∼s) → q`   |    | (P3)           |
+|4| `p`              |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|5| `r → ∼s`         |1,2 | (SH)           |
+|6| `q`              |3,5 | (MP)           |
+|7| `p ∧ q`          |4,6 | (CONJ)         |
+|8| `p → (p ∧ q)`    |4-7 | (DC)           |
+
+✅ **Argumento válido**
+</details>
+
+<details>
+<summary>Argumento (d)</summary>
+
+**Premissas:**
+1. `p → q`
+2. `r → p`
+3. `s → r`
+
+**Conclusão:** `s → q`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `p → q`          |    | (P1)           |
+|2| `r → p`          |    | (P2)           |
+|3| `s → r`          |    | (P3)           |
+|4| `s`              |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|5| `r`              |3,4 | (MP)           |
+|6| `p`              |2,5 | (MP)           |
+|7| `q`              |1,6 | (MP)           |
+|8| `s → q`          |4-7 | (DC)           |
+
+✅ **Argumento válido**
+</details>
+
+<details>
+<summary>Argumento (e) - Correção DM</summary>
+
+**Premissas:**
+1. `∼p`
+2. `∼r → q`
+3. `∼s → p`
+
+**Conclusão:** `∼(∼r ∧ s) → q`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `∼p`             |    | (P1)           |
+|2| `∼r → q`         |    | (P2)           |
+|3| `∼s → p`         |    | (P3)           |
+|4| `∼(∼r ∧ s)`      |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|5| `∼∼r ∨ ∼s`       | 4  | (DM)           |
+|6| `r ∨ ∼s`         | 5  | (DN)           |
+|7| `s`              |1,3 | (MT + DN)      |
+|8| `r`              |6,7 | (SD)           |
+|9| `q`              |2,8 | (MP)           |
+|10| `∼(∼r ∧ s) → q` |4-9 | (DC)           |
+
+✅ **Argumento válido**
+</details>
+
+<details>
+<summary>Argumento (f)</summary>
+
+**Premissas:**
+1. `p → ∼q`
+2. `∼r → q`
+3. `∼s → ∼q`
+
+**Conclusão:** `(p ∨ ∼s) → r`
+
+**Prova:**
+|   | Proposição       | L  | Justificativa  |
+|---|------------------|----|----------------|
+|1| `p → ∼q`         |    | (P1)           |
+|2| `∼r → q`         |    | (P2)           |
+|3| `∼s → ∼q`        |    | (P3)           |
+|4| `p ∨ ∼s`         |    | (PA-DC)        |
+|---|------------------|----|----------------|
+|5| Caso 1: `p`      |    | (Hip)          |
+|6| `∼q`             |1,5 | (MP)           |
+|7| `r`              |2,6 | (MT + DN)      |
+|---|------------------|----|----------------|
+|8| Caso 2: `∼s`     |    | (Hip)          |
+|9| `∼q`             |3,8 | (MP)           |
+|10| `r`             |2,9 | (MT + DN)      |
+|---|------------------|----|----------------|
+|11| `r`             |4,5-10 | (Caso DC)   |
+|12| `(p ∨ ∼s) → r`  |4-11 | (DC)          |
+
+✅ **Argumento válido**
+</details>
+</details>
