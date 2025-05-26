@@ -72,7 +72,6 @@
 
 <details>
 <summary>17. Demonstrações de Validade dos Argumentos</summary>
-<br>
 
 <details>
 <summary>Argumento (a)</summary>
