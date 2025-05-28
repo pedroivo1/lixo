@@ -44,19 +44,37 @@ INSERT INTO nome_tabela (nome, idade) VALUES ('João', 30);
 SELECT * FROM nome_tabela;
 ```
 
+### Selecionar colunas específicas
+```sql
+SELECT nome, idade FROM nome_tabela;
+```
+
 ### Filtros (WHERE)
 ```sql
 SELECT * FROM nome_tabela WHERE idade > 25;
 ```
 
-### Ordenação
+### Operadores lógicos
 ```sql
-SELECT * FROM nome_tabela ORDER BY idade DESC;
+SELECT * FROM nome_tabela WHERE idade > 25 AND ativo = TRUE;
+SELECT * FROM nome_tabela WHERE idade BETWEEN 20 AND 30;
+SELECT * FROM nome_tabela WHERE nome LIKE 'J%';
+SELECT * FROM nome_tabela WHERE nome ILIKE '%joão%'; -- case insensitive
+SELECT * FROM nome_tabela WHERE idade IN (25, 30, 35);
+SELECT * FROM nome_tabela WHERE idade IS NULL;
+SELECT * FROM nome_tabela WHERE idade IS NOT NULL;
 ```
 
-### Limitar resultados
+### Ordenação
+```sql
+SELECT * FROM nome_tabela ORDER BY idade DESC, nome ASC;
+```
+
+### Limitar e pular resultados
 ```sql
 SELECT * FROM nome_tabela LIMIT 5;
+SELECT * FROM nome_tabela OFFSET 10;
+SELECT * FROM nome_tabela LIMIT 5 OFFSET 10;
 ```
 
 ---
@@ -139,10 +157,10 @@ GROUP BY cidade_id;
 
 ## ✅ Dicas Extras
 
-| Conceito         | PostgreSQL usa      |
-|------------------|---------------------|
-| ID automático    | `SERIAL`            |
-| Booleano         | `BOOLEAN` (`TRUE`, `FALSE`) |
-| Texto variável   | `VARCHAR(n)` ou `TEXT` |
-| Data e hora      | `DATE`, `TIMESTAMP` |
-| Default          | `DEFAULT valor`     |
+| Conceito         | PostgreSQL usa                  |
+|------------------|---------------------------------|
+| ID automático    | `SERIAL`                        |
+| Booleano         | `BOOLEAN` (`TRUE`, `FALSE`)     |
+| Texto variável   | `VARCHAR(n)` ou `TEXT`          |
+| Data e hora      | `DATE`, `TIMESTAMP`             |
+| Default          | `DEFAULT valor`                 |
